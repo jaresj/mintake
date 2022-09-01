@@ -1,3 +1,4 @@
+// This is all in the bcrypt documentation -kb
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
