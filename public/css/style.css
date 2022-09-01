@@ -8,3 +8,47 @@ h1{
 .not{
     text-decoration: underline;
 }
+
+/* Login Page Customization */
+
+#form {
+    display: inline-block;
+}
+
+.basicInfo::before {
+    content: "\a";
+    white-space: pre;
+}
+
+#submit::before {
+    content: "\a";
+    white-space: pre;
+}
+
+li {
+    list-style: none;
+}
+
+.medicalHistory::before, .medicalHistory::after {
+    content: "\a";
+    white-space: pre;
+}
+
+#allConditions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.signatureBlock::before {
+    content: "\a";
+    white-space: pre;
+}
+
+#submit {
+    display: block;
+}
+
+#logout::before {
+    content: "\a";
+    white-space: pre;
+}
