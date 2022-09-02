@@ -1,11 +1,12 @@
 {
-  "name": "todo",
+  "name": "intake-project",
   "version": "1.0.0",
   "description": "A Simple ToDo App is built using the MVC Architecture, we have also implemented \"authorization\" so folx can sign up, customize & personalize the app",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set \"NODE_ENV=development\" && nodemon server.js"
   },
   "author": "Justice Jares",
   "license": "MIT",
@@ -14,7 +15,7 @@
     "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1",
+    "express": "^4.18.1",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.1",
     "mongodb": "^3.6.5",
@@ -23,9 +24,9 @@
     "nodemon": "^2.0.7",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "postmark": "^3.0.14",
     "validator": "^13.6.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaresj/todo-mvc-auth-local.git"
@@ -33,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/jaresj/todo-mvc-auth-local/issues"
   },
-  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme"
+  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme",
+  "devDependencies": {}
 }

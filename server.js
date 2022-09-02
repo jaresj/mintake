@@ -9,6 +9,8 @@ const logger = require('morgan');
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const todoRoutes = require('./routes/todos');
+const intakeRoutes = require('./routes/intake')
+const morgan = require('morgan')
 
 require('dotenv').config({ path: './config/.env' });
 
@@ -32,6 +34,13 @@ app.use(
   })
 );
 
+// Adding Morgan for logging
+// Use morgan for logging in dev mode
+// 'npm run dev' will begin dev mode (with morgan/nodemon)
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'))
+}
+
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
@@ -40,7 +49,8 @@ app.use(flash());
 
 app.use('/', mainRoutes);
 app.use('/todos', todoRoutes);
+app.use('/intake', intakeRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log('Server is running, you better catch it!');
+  console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);
 });
