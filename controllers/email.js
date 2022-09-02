@@ -3,7 +3,7 @@ const postmark = require("postmark")
 module.exports = {
     sendEmail: async (req, res) => {
         try {
-            let client = new postmark.ServerClient("69820d00-e72f-4384-90d9-596f45208621")
+            let client = new postmark.ServerClient(process.env.POSTMARK_STRING)
 
             client.sendEmail({
                 "From": "amethyst@amethystbibby.com",
