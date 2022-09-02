@@ -1,3 +1,28 @@
+const submitButton = document.querySelector('#submit');
+
+submitButton.addEventListener('click', submitForm);
+
+async function submitForm() {
+    try {
+        const response = await fetch('intake/sendEmail', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'msg': "Hello"
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    } catch(err){
+        console.log(err)
+    }
+}
+
+// ============================
+// Leon's code 
+// ============================
+
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
