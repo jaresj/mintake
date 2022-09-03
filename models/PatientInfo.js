@@ -1,26 +1,5 @@
 const mongoose = require('mongoose')
 
-// Keeping this template from the original code for the next couple days while I adjust Schema
-// const TodoSchema = new mongoose.Schema({
-//   todo: {
-//     type: String,
-//     required: true,
-//   },
-//   completed: {
-//     type: Boolean,
-//     required: true,
-//   },
-//   userId: {
-//     type: String,
-//     required: true
-//   }
-// })
-
-module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
-module.exports = mongoose.model('PatientMedInfo', PatientMedInfoSchema)
-
-
-// My patient information schema, copying the above
 const PatientInfoSchema = new mongoose.Schema({
   givenName: {
     type: String,
@@ -78,10 +57,6 @@ const PatientInfoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
-
-  // Considering keeping patient info seperate due to HIPPA concerns
-const PatientMedInfoSchema = new mongoose.Schema({
   medicalConditions:{
     type: String,
     required: false,
@@ -179,3 +154,5 @@ const PatientMedInfoSchema = new mongoose.Schema({
     required: true,
   },
 });
+
+module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
