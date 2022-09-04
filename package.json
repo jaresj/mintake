@@ -34,6 +34,5 @@
   "bugs": {
     "url": "https://github.com/jaresj/todo-mvc-auth-local/issues"
   },
-  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme"
 }

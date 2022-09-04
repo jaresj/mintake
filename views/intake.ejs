@@ -11,7 +11,7 @@
     <h1>Medical Questionnaire</h1>
     <p>Please fill out all required questions below.  Form will not submit unless all required questions are answered.</p>
     <main id="form">
-        <form name="intakeForm" action="/todos/createTodo" method='POST'>
+        <form name="intakeForm" action="/intake/submitIntake" method='POST'>
             <label for="givenName" class="basicInfo">Given Name:</label>
             <input class="entry" type="text" placeholder="Given Name" name="givenName" required>
 
@@ -134,92 +134,92 @@
 
                 <ul id="allConditions">
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="headaches" value="headaches">
+                        <input type="checkbox" class="conditions" name="headaches" value="true">
                         <label for="headaches">Headaches</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="cancer" value="cancer">
+                        <input type="checkbox" class="conditions" name="cancer" value="true">
                         <label for="cancer">Cancer</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="heartCondition" value="heartCondition">
+                        <input type="checkbox" class="conditions" name="heartCondition" value="true">
                         <label for="heartCondition">Heart/Circulation Problems</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="accident" value="accident">
+                        <input type="checkbox" class="conditions" name="accident" value="true">
                         <label for="accident">Major Accident</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="backInjury" value="backInjury">
+                        <input type="checkbox" class="conditions" name="backInjury" value="true">
                         <label for="backInjury">Neck/Back Injuries</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="numbness" value="numbness">
+                        <input type="checkbox" class="conditions" name="numbness" value="true">
                         <label for="numbness">Numbness</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="allergies" value="allergies">
+                        <input type="checkbox" class="conditions" name="allergies" value="true">
                         <label for="allergies">Allergies</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="tmj" value="tmj">
+                        <input type="checkbox" class="conditions" name="tmj" value="true">
                         <label for="tmj">TMJ</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="jointSurgery" value="jointSurgery">
+                        <input type="checkbox" class="conditions" name="jointSurgery" value="true">
                         <label for="jointSurgery">Joint Surgery</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="varicoseVeins" value="varicoseVeins">
+                        <input type="checkbox" class="conditions" name="varicoseVeins" value="true">
                         <label for="varicoseVeins">Varicose Veins</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="diabetes" value="diabetes">
+                        <input type="checkbox" class="conditions" name="diabetes" value="true">
                         <label for="diabetes">Diabetes</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="sprains" value="sprains">
+                        <input type="checkbox" class="conditions" name="sprains" value="true">
                         <label for="sprains">Sprains / Strains</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="arthritis" value="arthritis">
+                        <input type="checkbox" class="conditions" name="arthritis" value="true">
                         <label for="arthritis">Arthritis/Tendonitis</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="skinConditions" value="skinConditions">
+                        <input type="checkbox" class="conditions" name="skinConditions" value="true">
                         <label for="skinConditions">Abnormal Skin Conditions</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="bloodPressure" value="bloodPressure">
+                        <input type="checkbox" class="conditions" name="bloodPressure" value="true">
                         <label for="bloodPressure">High/Low Blood Pressure</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="bloodClots" value="bloodClots">
+                        <input type="checkbox" class="conditions" name="bloodClots" value="true">
                         <label for="bloodClots">Blood Clots</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="fibromyalgia" value="fibromyalgia">
+                        <input type="checkbox" class="conditions" name="fibromyalgia" value="true">
                         <label for="fibromyalgia">Fibromyalgia</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="recentInjuries" value="recentInjuries">
+                        <input type="checkbox" class="conditions" name="recentInjuries" value="true">
                         <label for="recentInjuries">Recent Injuries</label>
                     </li>
 
@@ -227,7 +227,7 @@
             </section>
 
             <p>Please add any necessary information regarding any of the conditions marked above that we should be aware of:</p>
-            <textarea id="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"></textarea>
+            <textarea id="conditionDetails" name="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"></textarea>
     
             <label for="userSignature" class="signatureBlock">Digital Signature:</label>
             <input type="text" placeholder="Patient Name/Signature" name="userSignature" required>

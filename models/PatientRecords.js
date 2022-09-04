@@ -1,26 +1,5 @@
 const mongoose = require('mongoose')
 
-// Keeping this template from the original code for the next couple days while I adjust Schema
-// const TodoSchema = new mongoose.Schema({
-//   todo: {
-//     type: String,
-//     required: true,
-//   },
-//   completed: {
-//     type: Boolean,
-//     required: true,
-//   },
-//   userId: {
-//     type: String,
-//     required: true
-//   }
-// })
-
-module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
-module.exports = mongoose.model('PatientMedInfo', PatientMedInfoSchema)
-
-
-// My patient information schema, copying the above
 const PatientInfoSchema = new mongoose.Schema({
   givenName: {
     type: String,
@@ -78,10 +57,6 @@ const PatientInfoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
-
-  // Considering keeping patient info seperate due to HIPPA concerns
-const PatientMedInfoSchema = new mongoose.Schema({
   medicalConditions:{
     type: String,
     required: false,
@@ -93,78 +68,92 @@ const PatientMedInfoSchema = new mongoose.Schema({
   headaches:{
     type: Boolean,
     required: false,
+    default: false
   },
   majorAccident:{
     type: Boolean,
     required: false,
+    default: false
   },
   allergies:{
     type: Boolean,
     required: false,
+    default: false
   },
   varicoseVeins:{
     type: Boolean,
     required: false,
+    default: false
   },
   arthritisTendonitis:{
     type: Boolean,
     required: false,
-  },
-  headaches:{
-    type: Boolean,
-    required: false,
+    default: false
   },
   bloodClots:{
     type: Boolean,
     required: false,
+    default: false
   },
   cancer:{
     type: Boolean,
     required: false,
+    default: false
   },
   neckBackInjuries:{
     type: Boolean,
     required: false,
+    default: false
   },
   tmj:{
     type: Boolean,
     required: false,
+    default: false
   }, 
   diabetes:{
     type: Boolean,
     required: false,
+    default: false
   },
   abnormalSkinConditions:{
     type: Boolean,
     required: false,
+    default: false
   },
-  fibromyalgiaj:{
+  fibromyalgia:{
     type: Boolean,
     required: false,
+    default: false
   },
   heartCirculationProblems:{
     type: Boolean,
     required: false,
+    default: false
   },
   numbness:{
     type: Boolean,
     required: false,
+    default: false
   },
   jointSurgery:{
     type: Boolean,
     required: false,
+    default: false
   },
   sprainsStrains:{
     type: Boolean,
     required: false,
+    default: false
   },
   highLowBloodPressure:{
     type: Boolean,
     required: false,
+    default: false
   },
   recentInjuries:{
     type: Boolean,
     required: false,
+    default: false
   },
   additionalSymptomInfo:{
     type: String,
@@ -178,4 +167,6 @@ const PatientMedInfoSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-});
+}, { timestamps : true });
+
+module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
