@@ -18,8 +18,8 @@ module.exports = {
                 emergencyContactRelationship: req.body.userContactPhone,
                 physician: req.body.userPhysician,
                 physicianPhone: req.body.userPhysicianPhone,
-                medicalConditions: req.body.userHealthConditons,
-                currentMedications: req.body.userMedications,
+                medicalConditions: req.body.userHealthConditons || null,
+                currentMedications: req.body.userMedications || null,
                 headaches: req.body.headaches,
                 majorAccident: req.body.accident,
                 allergies: req.body.allergies,
@@ -37,8 +37,8 @@ module.exports = {
                 jointSurgery: req.body.jointSurgery,
                 sprainsStrains: req.body.sprains,
                 highLowBloodPressure: req.body.bloodPressure,
-                recentInjuries: req.body.recentInjuries,
-                additionalSymptomInfo: req.body.conditionDetails,
+                recentInjuries: req.body.recentInjuries || null,
+                additionalSymptomInfo: req.body.conditionDetails || null,
                 digitalSignature: req.body.userSignature,
                 dateOfSubmission: req.body.currentDate
             })
