@@ -11,8 +11,8 @@ async function submitForm() {
         const response = await fetch('intake/submitIntake', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
-            })
         })
+        
         const data = await response.json()
         console.log(data)
         location.reload()
@@ -44,8 +44,8 @@ async function submitUserForm() {
         const response = await fetch('signup/submitUserForm', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
-            })
         })
+        
         const data = await response.json()
         console.log(data)
         location.reload()
