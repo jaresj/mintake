@@ -1,4 +1,5 @@
 const submitButton = document.querySelector('#submit');
+const {json} = require("express");
 
 submitButton.addEventListener('click', submitForm);
 // Will need to re-add an event listener to the submit button for emails when ready.
@@ -8,8 +9,6 @@ async function submitForm() {
         const response = await fetch('intake/submitIntake', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'msg': "Hello"
             })
         })
         const data = await response.json()
