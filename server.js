@@ -8,7 +8,6 @@ const flash = require('express-flash');
 const logger = require('morgan');
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
-const todoRoutes = require('./routes/todos');
 const intakeRoutes = require('./routes/intake')
 const morgan = require('morgan')
 
@@ -49,6 +48,7 @@ app.use(flash());
 
 app.use('/', mainRoutes);
 app.use('/intake', intakeRoutes);
+app.use('/signup', mainRoutes)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);
