@@ -68,78 +68,92 @@ const PatientInfoSchema = new mongoose.Schema({
   headaches:{
     type: Boolean,
     required: false,
+    default: false
   },
   majorAccident:{
     type: Boolean,
     required: false,
+    default: false
   },
   allergies:{
     type: Boolean,
     required: false,
+    default: false
   },
   varicoseVeins:{
     type: Boolean,
     required: false,
+    default: false
   },
   arthritisTendonitis:{
     type: Boolean,
     required: false,
-  },
-  headaches:{
-    type: Boolean,
-    required: false,
+    default: false
   },
   bloodClots:{
     type: Boolean,
     required: false,
+    default: false
   },
   cancer:{
     type: Boolean,
     required: false,
+    default: false
   },
   neckBackInjuries:{
     type: Boolean,
     required: false,
+    default: false
   },
   tmj:{
     type: Boolean,
     required: false,
+    default: false
   }, 
   diabetes:{
     type: Boolean,
     required: false,
+    default: false
   },
   abnormalSkinConditions:{
     type: Boolean,
     required: false,
+    default: false
   },
-  fibromyalgiaj:{
+  fibromyalgia:{
     type: Boolean,
     required: false,
+    default: false
   },
   heartCirculationProblems:{
     type: Boolean,
     required: false,
+    default: false
   },
   numbness:{
     type: Boolean,
     required: false,
+    default: false
   },
   jointSurgery:{
     type: Boolean,
     required: false,
+    default: false
   },
   sprainsStrains:{
     type: Boolean,
     required: false,
+    default: false
   },
   highLowBloodPressure:{
     type: Boolean,
     required: false,
+    default: false
   },
   recentInjuries:{
     type: Boolean,
     required: false,
+    default: false
   },
   additionalSymptomInfo:{
     type: String,
@@ -153,6 +167,6 @@ const PatientInfoSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-});
+}, { timestamps : true });
 
 module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
