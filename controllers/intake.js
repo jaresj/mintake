@@ -37,7 +37,7 @@ module.exports = {
                 jointSurgery: req.body.jointSurgery,
                 sprainsStrains: req.body.sprains,
                 highLowBloodPressure: req.body.bloodPressure,
-                recentInjuries: req.body.recentInjuries || null,
+                recentInjuries: req.body.recentInjuries,
                 additionalSymptomInfo: req.body.conditionDetails || null,
                 digitalSignature: req.body.userSignature,
                 dateOfSubmission: req.body.currentDate
