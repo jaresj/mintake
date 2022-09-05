@@ -4,9 +4,10 @@ const User = require('../models/User');
 
 exports.getLogin = (req, res) => {
   if (req.user) {
+    console.log(req.user)
     return res.redirect('/intake');
   }
-  res.render('login', {
+  res.render('login.ejs', {
     title: 'Login',
   });
 };
