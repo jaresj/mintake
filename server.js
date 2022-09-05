@@ -48,7 +48,7 @@ app.use(flash());
 
 app.use('/', mainRoutes);
 app.use('/intake', intakeRoutes);
-app.use('/signup', mainRoutes)
+app.use('/signup', mainRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);

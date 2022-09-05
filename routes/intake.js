@@ -11,6 +11,12 @@ router.get('/', (req, res) => {
     res.render('intake.ejs')
 })
 
+// @desc    Testing route: Retrieve user data for email
+// @route   GET /sendEmail
+
+//should probably be removed eventually for only PUT email form
+router.get('/sendEmail', emailController.getUser)
+
 // @desc    Send email on form submit
 // @route   PUT /sendEmail
 router.put('/sendEmail', emailController.sendEmail);

@@ -1,9 +1,10 @@
-const Intake = require('../models/PatientRecords')
+const Intake = require('../models/PatientInfo')
 
 module.exports = {
     submitIntakeForm: async (req, res) => {
         try {
             await Intake.create({
+                userId: req.user._id,
                 givenName: req.body.givenName,
                 familyName: req.body.familyName,
                 address: req.body.streetAddress,

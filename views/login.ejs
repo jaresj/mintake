@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Login</title>
 
     <!-- CSS ONLY -->
-    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="css/Login.css" />
 
     <!-- Meta Only -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-        <h1>Login to Access Intake Form</h1>
-        <% if (locals.messages.errors) { %>
-            <% messages.errors.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
-            <% }) %>
-        <% } %>
-        <% if (locals.messages.info) { %>
-            <% messages.info.forEach( el => { %>
-                <div class="alert alert-danger"><%= el.msg %></div>
-            <% }) %>
-        <% } %>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="patient-login">
+      <div class="login-text">
+        <h1>Patient Login</h1>
+        <h3>Please login below to access your account</h3>
+      </div>
+      <div class="login-form">
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+        %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+        messages.info.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %>
         <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="submit">
+          <label for="email">Email:</label>
+          <input type="email" name="email" placeholder="Email" />
+          <label for="psw">Password:</label>
+          <input type="password" name="password" placeholder="Password" />
+          <input type="submit" value="Login" class="login-btn" />
         </form>
-</body>
+      </div>
+    </div>
+  </body>
 </html>

@@ -67,3 +67,60 @@ li {
 .login-signup {
   width: 60px;
 }
+
+/* LOGIN */
+
+.login-form form {
+  padding: 16px;
+  border: 3px solid rgb(128, 128, 128);
+}
+
+.login-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-text > h3 {
+  font-weight: lighter;
+}
+
+.login-form {
+  height: 200px;
+  padding: 16px;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-form label {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+}
+.login-btn {
+  display: flex;
+  align-items: flex-end;
+  background-color: rgb(0, 165, 245);
+  color: white;
+  padding: 14px 20px;
+  margin: 32px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-button:hover {
+  opacity: 0.8;
+}
