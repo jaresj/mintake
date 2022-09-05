@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="form-header">
     <h1>Medical Questionnaire</h1>
-    <p>Please fill out all required questions below.  Form will not submit unless all required questions are answered.</p>
+    <p>Please fill out all required questions below.  Form will not submit unless all required questions are answered.</p></div>
+    <button class="logout-btn"><a href="/logout" id="logout"></a>Sign Out</button>
     <main id="form">
         <form name="intakeForm" action="/intake/submitIntake" method='POST'>
             <label for="givenName" class="basicInfo">Given Name:</label>
@@ -233,12 +235,12 @@
             <input type="text" placeholder="Patient Name/Signature" name="userSignature" required>
             <label for="currentDate" class="signatureBlock">Date:</label>
             <input type="date" placeholder="MM/DD/YYYY" name="currentDate" required>
-            <input type="submit" id="submit">
+            <input type="submit" id="submit" value="Submit">
         </form>
     </main>
     
 
-    <a href="/logout" id="logout">Logout</a>
+    
 
     <script src="js/main.js"></script>
 </body>
