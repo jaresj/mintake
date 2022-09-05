@@ -1,8 +1,10 @@
 const submitButton = document.querySelector('#submit');
+const emailButton = document.querySelector('#email');
 const {json} = require("express");
 
 submitButton.addEventListener('click', submitForm);
 submitButton.addEventListener('click', submitUserForm);
+emailButton.addEventListener('click', sendEmail);
 
 // Will need to re-add an event listener to the submit button for emails when ready.
 
