@@ -1,4 +1,4 @@
-const Intake = require('../models/PatientRecords')
+const Intake = require('../models/PatientInfo')
 
 module.exports = {
     submitIntakeForm: async (req, res) => {

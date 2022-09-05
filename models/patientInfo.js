@@ -173,4 +173,3 @@ const PatientInfoSchema = new mongoose.Schema({
   },
 }, { timestamps : true });
 
-module.exports = mongoose.model('PatientInfo', PatientInfoSchema)
