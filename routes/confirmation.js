@@ -4,7 +4,7 @@ const router = express.Router()
 
 // @desc    Confirmation Page
 // @route   GET /Confirmation.ejs
-router.get('/', (req, res) => {
+router.get('/submitIntake', (req, res) => {
     res.render('/confirmation.ejs')
 })
 
