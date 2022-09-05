@@ -13,19 +13,19 @@
     <main id="form">
         <form name="intakeForm" action="/intake/submitIntake" method='POST'>
             <label for="givenName" class="basicInfo">Given Name:</label>
-            <input class="entry" type="text" placeholder="Given Name" name="givenName" required>
+            <input class="entry" type="text" placeholder="Given Name" value="<%= locals.givenName || "" %>" name="givenName" required>
 
             <label for="familyName" class="basicInfo">Family Name:</label>
-            <input class="entry" type="text" placeholder="Family Name" name="familyName" required>
+            <input class="entry" type="text" placeholder="Family Name" value="<%= locals.familyName || "" %>" name="familyName" required>
 
             <label for="streetAddress" class="basicInfo">Address:</label>
-            <input class="entry" type="text" placeholder="Street Address" name="streetAddress" required>
+            <input class="entry" type="text" placeholder="Street Address" value="<%= locals.address || "" %>" name="streetAddress" required>
 
             <label for="userCity" class="basicInfo">City:</label>
-            <input type="text" class="entry" placeholder="City" name="userCity" required>
+            <input type="text" class="entry" placeholder="City" value="<%= locals.city || "" %>" name="userCity" required>
 
             <label for="userState" class="basicInfo">State:</label>
-            <select id="country-state" name="userState">
+            <select id="country-state" name="userState" value="<%= locals.state || "" %>">
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AS">American Samoa</option>
@@ -95,40 +95,40 @@
             </select>
 
             <label for="userZip" class="basicInfo">ZIP Code:</label>
-            <input class="entry" type="text" placeholder="xxxxx" name="userZip" required>
+            <input class="entry" type="text" placeholder="xxxxx" name="userZip" value="<%= locals.zipCode || "" %>" required>
 
             <label for="userPhone" class="basicInfo">Phone Number:</label>
-            <input class="entry" type="tel" placeholder="555-555-5555" name="userPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <input class="entry" type="tel" placeholder="555-555-5555" name="userPhone" value="<%= locals.phoneNumber || "" %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
             <label for="userEmail" class="basicInfo">Email Address:</label>
-            <input class="entry" type="email" placeholder="patient@domain.com" name="userEmail" required>
+            <input class="entry" type="email" placeholder="patient@domain.com" value="<%= locals.emailAddress || "" %>"name="userEmail" required>
 
             <label for="userOccupation" class="basicInfo">Occupation:</label>
-            <input class="entry" type="text" placeholder="Occupation" name="userOccupation" required>
+            <input class="entry" type="text" placeholder="Occupation" value="<%= locals.occupation || "" %>" name="userOccupation" required>
             
             <label for="userContact" class="basicInfo">Emergency Contact:</label>
-            <input type="text" placeholder="Contact Name" name="userContact" required>
+            <input type="text" placeholder="Contact Name" name="userContact" value="<%= locals.emergencyContact || "" %>"required>
 
             <label for="userContactPhone" class="basicInfo">Emergency Contact Phone:</label>
-            <input type="tel" placeholder="555-555-5555" name="userContactPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <input type="tel" placeholder="555-555-5555" name="userContactPhone" value="<%= locals.emergencyContactPhone || "" %>" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 
             <label for="userContactRelationship" class="basicInfo">Emergency Contact Relationship:</label>
-            <input type="text" placeholder="Mother" name="userContactRelationship">
+            <input type="text" placeholder="Mother" value="<%= locals.emergencyContactRelationship || "" %>"name="userContactRelationship">
 
             <label for="userPhysician" class="basicInfo">Physician:</label>
-            <input type="text" placeholder="Dr. Userdoc" name="userPhysician">
+            <input type="text" placeholder="Dr. Userdoc" value="<%= locals.physician || "" %>" name="userPhysician">
 
             <label for="userPhysicianPhone" class="basicInfo">Physician Phone:</label>
-            <input type="tel" placeholder="555-555-5555" name="userPhysicianPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <input type="tel" placeholder="555-555-5555" value="<%= locals.physicianPhone || "" %>" name="userPhysicianPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
     
             <section id="medicalHistory">
 
                 <h3>Medical History</h3>
 
                 <label for="userHealthConditions" class="medicalHistory">Medical Conditions:</label>
-                <textarea name="userHealthConditions" form="intakeForm" placeholder="Describe any medical conditions here" rows="6" cols="100"></textarea>
+                <textarea name="userHealthConditions" form="intakeForm" placeholder="Describe any medical conditions here" rows="6" cols="100"><%= locals.medicalConditions || "" %></textarea>
                 <label for="userMedications" class="medicalHistory">Current Medications:</label>
-                <textarea name="userMedications" form="intakeForm" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"></textarea>
+                <textarea name="userMedications" form="intakeForm" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"><%= locals.currentMedications || "" %></textarea>
 
                 <p>Please indicate any of the following conditions you currently have:</p>
 
@@ -227,7 +227,7 @@
             </section>
 
             <p>Please add any necessary information regarding any of the conditions marked above that we should be aware of:</p>
-            <textarea id="conditionDetails" name="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"></textarea>
+            <textarea id="conditionDetails" name="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"><%= locals.additionalSymptomInfo || "" %></textarea>
     
             <label for="userSignature" class="signatureBlock">Digital Signature:</label>
             <input type="text" placeholder="Patient Name/Signature" name="userSignature" required>
