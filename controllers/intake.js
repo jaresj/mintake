@@ -3,13 +3,13 @@ const Intake = require('../models/PatientInfo')
 
 module.exports = {
     getSubmission: async (req, res) => {
-        try{
+        try {
             //PatientInfo.js needs to be changed to capitalized
-            const formEntries = await PatientInfo.find( {userId: req.user._id} )
+            const formEntries = await PatientInfo.find({ userId: req.user._id })
             console.log(formEntries)
             if (formEntries.length === 0) {
-                 res.render('intake.ejs')    
-            } else{
+                res.render('intake.ejs')
+            } else {
                 res.render('intake.ejs', {
                     givenName: formEntries[0].givenName,
                     familyName: formEntries[0].familyName,
@@ -50,8 +50,8 @@ module.exports = {
                     dateOfSubmission: formEntries.dateOfSubmission
                 })
             }
-                
-        } catch(err) {
+
+        } catch (err) {
             console.log(err)
         }
     },
@@ -98,8 +98,8 @@ module.exports = {
                 dateOfSubmission: req.body.currentDate
             })
             console.log('Form has been submitted')
-            res.redirect('/')
-        } catch(err) {
+            res.redirect('/confirmation')
+        } catch (err) {
             console.log(err)
         }
     }
