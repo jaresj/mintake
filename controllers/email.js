@@ -1,13 +1,13 @@
 const postmark = require("postmark")
 const User = require('../models/User')
-const PatientRecord = require('../models/PatientRecords')
+const PatientInfo = require('../models/PatientInfo')
 
 module.exports = {
     getUser: async (req, res) => {
         try{
             console.log(req.user)
             const userData = req.user
-            const userForm = await PatientRecord.find({userId: userData._id})
+            const userForm = await PatientInfo.find({userId: userData._id})
             console.log(`Sent from in the getUser block`)
             console.log(userData, userForm)
             res.redirect('/intake')
