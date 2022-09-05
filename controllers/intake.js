@@ -44,8 +44,8 @@ module.exports = {
                 dateOfSubmission: req.body.currentDate
             })
             console.log('Form has been submitted')
-            res.redirect('/')
-        } catch(err) {
+            res.redirect('/confirmation.ejs')
+        } catch (err) {
             console.log(err)
         }
     }
