@@ -7,9 +7,7 @@ const { ensureAuth } = require('../middleware/auth')
 
 // @desc    Intake Page
 // @route   GET /intake
-router.get('/', ensureAuth, (req, res) => {
-    res.render('intake.ejs')
-})
+router.get('/', ensureAuth, intakeController.getSubmission)
 
 // @desc    Testing route: Retrieve user data for email
 // @route   GET /sendEmail
