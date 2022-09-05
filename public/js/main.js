@@ -41,7 +41,7 @@ async function sendEmail() {
 
 async function submitUserForm() {
     try {
-        const response = await fetch('signup/submitUserForm', {
+        const response = await fetch('submitUserForm', {
             method: 'post',
             headers: {'Content-type': 'application/json'},
         })

@@ -10,6 +10,9 @@ router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)
 router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
+router.get('/submitUserForm', authController.getSignup)
+router.post('/submitUserForm', authController.postSignup)
+
 
 router.post('/login', authController.postLogin)
 router.get('/submitUserForm', authController.getSignup)
