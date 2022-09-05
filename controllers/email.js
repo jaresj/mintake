@@ -25,7 +25,8 @@ module.exports = {
 
             client.sendEmail({
                 "From": "amethyst@amethystbibby.com",
-                "To": userForm.emailAddress,
+                // "To": userForm.emailAddress,
+                "To": "patientintakeapplication@gmail.com",
                 "Subject": "Medical Intake Form Completed",
                 "MessageStream": "outbound",
                 "TemplateAlias": 'formSubmission',
@@ -42,8 +43,8 @@ module.exports = {
                         "emailAddress": userForm.emailAddress,
                         "occupation": userForm.occupation,
                         "emergencyContact": userForm.emergencyContact,
-                        "emergencyContactPhone": userForm.emergencyContactPhone_Value,
-                        "emergencyContactRelationship": userForm.emergencyContactRelationship_Value,
+                        "emergencyContactPhone": userForm.emergencyContactPhone,
+                        "emergencyContactRelationship": userForm.emergencyContactRelationship,
                         "physician": userForm.physician,
                         "physicianPhone": userForm.physicianPhone,
                         "digitalSignature": userForm.digitalSignature
