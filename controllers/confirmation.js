@@ -1,5 +1,5 @@
 module.exports = {
-    getIndex: (req, res) => {
+    getConfirmation: (req, res) => {
         res.render('confirmation.ejs')
     }
 }
