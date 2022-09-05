@@ -1,6 +1,6 @@
 const submitButton = document.querySelector('#submit');
 const emailButton = document.querySelector('#email');
-const {json} = require("express");
+
 
 submitButton.addEventListener('click', submitForm);
 submitButton.addEventListener('click', submitUserForm);
@@ -29,9 +29,6 @@ async function sendEmail() {
         const response = await fetch('intake/sendEmail', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'msg': "Hello"
-            })
         })
         const data = await response.json()
         console.log(data)

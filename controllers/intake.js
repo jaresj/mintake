@@ -1,6 +1,60 @@
+const PatientInfo = require('../models/PatientInfo')
 const Intake = require('../models/PatientInfo')
 
 module.exports = {
+    getSubmission: async (req, res) => {
+        try{
+            //PatientInfo.js needs to be changed to capitalized
+            const formEntries = await PatientInfo.find( {userId: req.user._id} )
+            console.log(formEntries)
+            if (formEntries.length === 0) {
+                 res.render('intake.ejs')    
+            } else{
+                res.render('intake.ejs', {
+                    givenName: formEntries[0].givenName,
+                    familyName: formEntries[0].familyName,
+                    address: formEntries.address,
+                    city: formEntries.city,
+                    state: formEntries[0].state,
+                    zipCode: formEntries.zipCode,
+                    phoneNumber: formEntries.phoneNumber,
+                    emailAddress: formEntries.userEmail,
+                    occupation: formEntries.occupation,
+                    emergencyContact: formEntries.emergencyContact,
+                    emergencyContactPhone: formEntries.emergencyContactPhone,
+                    emergencyContactRelationship: formEntries.emergencyContactRelationship,
+                    physician: formEntries.physician,
+                    physicianPhone: formEntries.physicianPhone,
+                    medicalConditions: formEntries.medicalConditions,
+                    currentMedications: formEntries.currentMedications,
+                    headaches: formEntries.headaches,
+                    majorAccident: formEntries.majorAccident,
+                    allergies: formEntries.allergies,
+                    varicoseVeins: formEntries.varicoseVeins,
+                    arthritisTendonitis: formEntries.arthritisTendonitis,
+                    bloodClots: formEntries.bloodClots,
+                    cancer: formEntries.cancer,
+                    neckBackInjuries: formEntries.neckBackInjury,
+                    tmj: formEntries.tmj,
+                    diabetes: formEntries.diabetes,
+                    abnormalSkinConditions: formEntries.abnormalSkinConditions,
+                    fibromyalgia: formEntries.fibromyalgia,
+                    heartCirculationProblems: formEntries.heartCirculationProblems,
+                    numbness: formEntries.numbness,
+                    jointSurgery: formEntries.jointSurgery,
+                    sprainsStrains: formEntries.sprainsStrains,
+                    highLowBloodPressure: formEntries.highLowBloodPressure,
+                    recentInjuries: formEntries.recentInjuries,
+                    additionalSymptomInfo: formEntries.additionalSymptomInfo,
+                    digitalSignature: formEntries.digitalignature,
+                    dateOfSubmission: formEntries.dateOfSubmission
+                })
+            }
+                
+        } catch(err) {
+            console.log(err)
+        }
+    },
     submitIntakeForm: async (req, res) => {
         try {
             await Intake.create({
