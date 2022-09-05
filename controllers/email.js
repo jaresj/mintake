@@ -1,9 +1,27 @@
 const postmark = require("postmark")
+const User = require('../models/User')
+const PatientRecord = require('../models/PatientRecords')
 
 module.exports = {
+    getUser: async (req, res) => {
+        try{
+            console.log(req.user)
+            const userData = req.user
+            const userForm = await PatientRecord.find({userId: userData._id})
+            console.log(`Sent from in the getUser block`)
+            console.log(userData, userForm)
+            res.redirect('/intake')
+        } catch(err) {
+            console.log(err)
+        }
+    },
     sendEmail: async (req, res) => {
         try {
-            let client = new postmark.ServerClient(process.env.POSTMARK_STRING)
+            // Should have code to receive info from the user and database from the getUser function above.  You can probably either run the function and save the variables, or probably better to just move the userData/userForm from that block into here and get rid of getUser.
+
+            // Something like:
+            // const userData = req.user
+            // const userForm = await PatientRecord.find({userId: userData._id})
 
             client.sendEmail({
                 "From": "amethyst@amethystbibby.com",
@@ -14,7 +32,7 @@ module.exports = {
                 "TemplateModel": {
                     // Replace patient with PatientInfo object fetched from database
                     "patient": {
-                        "givenName": "givenName_Value",
+                        "givenName": userForm.givenName,
                         "familyName": "familyName_Value",
                         "address": "address_Value",
                         "city": "city_Value",
