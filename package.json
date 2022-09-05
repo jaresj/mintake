@@ -4,9 +4,9 @@
   "description": "A Simple ToDo App is built using the MVC Architecture, we have also implemented \"authorization\" so folx can sign up, customize & personalize the app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "set \"NODE_ENV=development\" && nodemon server.js"
+    "dev": "set \"NODE_ENV=development\" && nodemon server.js",
+    "start": "nodemon server.js"
   },
   "author": "Justice Jares",
   "license": "MIT",

@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-</head>
-<body>
-    <section>
-        <div>
-            <h1>Please signup to access your intake form</h1>
-        </div>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="signup">
+      <div class="signup-header">
+        <h1>Please signup to access your intake form</h1>
+      </div>
 
-        <div>
-            <% if (locals.messages.errors) { %>
-                <% messages.errors.forEach( el => { %>
-                    <div class="alert alert-danger"><%= el.msg %></div>
-                <% }) %>
-            <% } %>
-            <form name="UserForm" action="/submitUserForm" method="POST">
-                <input type="text" name="userName" placeholder="User Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-                <input type="submit" id="submit">
-            </form>
-        </div>
+      <div>
+        <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => {
+        %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %>
+        <form name="UserForm" action="/submitUserForm" method="POST">
+          <input type="text" name="userName" placeholder="User Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <input class="signup-btn" type="submit" id="submit" value="Sign Up" />
+        </form>
+      </div>
     </section>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
