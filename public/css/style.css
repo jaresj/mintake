@@ -7,10 +7,33 @@
   text-decoration: underline;
 }
 
-/* Login Page Customization */
+.logout-btn {
+  float: right;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/* Sign up */
 
 #form {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form input {
+  margin: 8px 0;
+}
+
+.basicInfo {
+  font-weight: bold;
+  margin: 32px 0;
 }
 
 .basicInfo::before {
