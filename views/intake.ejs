@@ -136,9 +136,9 @@
                 <h3>Medical History</h3>
 
                 <label for="userHealthConditions" class="medicalHistory">Medical Conditions:</label>
-                <textarea name="userHealthConditions" form="intakeForm" placeholder="Describe any medical conditions here" rows="6" cols="100"><%= locals.medicalConditions || "" %></textarea>
+                <textarea name="userHealthConditions" placeholder="Describe any medical conditions here" rows="6" cols="100"><%= locals.medicalConditions || "" %></textarea>
                 <label for="userMedications" class="medicalHistory">Current Medications:</label>
-                <textarea name="userMedications" form="intakeForm" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"><%= locals.currentMedications || "" %></textarea>
+                <textarea name="userMedications" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"><%= locals.currentMedications || "" %></textarea>
 
                 <p>Please indicate any of the following conditions you currently have:</p>
 
@@ -232,12 +232,11 @@
                         <input type="checkbox" class="conditions" name="recentInjuries" value="true">
                         <label for="recentInjuries">Recent Injuries</label>
                     </li>
-
-                </section>
+                </ul>
             </section>
 
             <p>Please add any necessary information regarding any of the conditions marked above that we should be aware of:</p>
-            <textarea id="conditionDetails" name="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"><%= locals.additionalSymptomInfo || "" %></textarea>
+            <textarea name="conditionDetails" placeholder="Additional information here" rows="6" cols="100"><%= locals.additionalSymptomInfo || "" %></textarea>
     
             <label for="userSignature" class="signatureBlock">Digital Signature:</label>
             <input type="text" placeholder="Patient Name/Signature" name="userSignature" required>
@@ -246,9 +245,6 @@
             <input type="submit" id="submit" value="Submit" onsubmit="submitForm()">
         </form>
     </main>
-    
-
-    
 
     <script src="js/main.js"></script>
 </body>
