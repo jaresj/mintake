@@ -16,10 +16,13 @@ const intakeRoutes = require('/app/routes/intake');
 const confirmationRoutes = require('/app/routes/confirmation')
 const morgan = require('morgan');
 
-require('dotenv').config({ path: './config/.env' });
+// Changed path from ./ {...} to /app for both dotenv and passport
+
+// require('dotenv').config({ path: './config/.env' });
+require('dotenv').config({ path: '/app/config/.env' });
 
 // Passport config
-require('./config/passport')(passport);
+require('/app/config/passport')(passport);
 
 connectDB();
 
