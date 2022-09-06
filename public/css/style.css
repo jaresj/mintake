@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', 'sans-serif';
+}
+
 .completed {
   text-decoration: line-through;
   color: gray;
@@ -187,7 +191,6 @@ input[type='text'] {
   background-color: rgb(0, 165, 245);
   color: white;
   margin: 15px auto;
-  width: 20%;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -249,5 +252,50 @@ body {
 .header a {
   text-decoration: none;
   color: rgb(0, 165, 245);
+  cursor: pointer;
+}
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduction h1 {
+  font-size: 3rem;
+}
+
+.introduction p {
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.confirmation-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirmationForm {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.confirmation-btn,
+.confirmationForm * {
+  font-size: 1.2rem;
+}
+
+.confirmationForm #email {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 165, 245);
+  color: white;
+  margin: 15px auto;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
