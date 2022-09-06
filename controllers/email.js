@@ -22,7 +22,8 @@ module.exports = {
             // Something like:
             // const userData = req.user
             // const userForm = await PatientRecord.find({userId: userData._id})
-
+            let client = new postmark.ServerClient(process.env.POSTMARK_STRING);
+            
             client.sendEmail({
                 "From": "amethyst@amethystbibby.com",
                 // "To": userForm.emailAddress,
@@ -31,7 +32,6 @@ module.exports = {
                 "MessageStream": "outbound",
                 "TemplateAlias": 'formSubmission',
                 "TemplateModel": {
-                    // Replace patient with PatientInfo object fetched from database
                     "patient": {
                         "givenName": userForm.givenName,
                         "familyName": userForm.familyName,
