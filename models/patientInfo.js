@@ -167,11 +167,7 @@ const PatientInfoSchema = new mongoose.Schema(
     digitalSignature: {
       type: String,
       required: true,
-    },
-    dateOfSubmission: {
-      type: Date,
-      required: true,
-    },
+    }
   },
   { timestamps: true }
 );
