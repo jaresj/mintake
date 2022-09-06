@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Only -->
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Styling Only -->
+    
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -34,7 +34,11 @@
       src="/assets/images/diana-polekhina--z82VezdK2M-unsplash.jpg"
       alt="Thumbs Up"
     />
-    <button class="confirmation-btn" onclick="window.location.href='/'">
+    <form method="post" action="/confirmation/sendEmail" method="POST">
+      <input type="hidden" name="name" value="value" /> 
+      <input id="email" type="submit" value="Send Confirmation Email">
+    </form>
+    <button class="confirmation-btn" id="email" onclick="location.href='/'">
       THANK YOU
     </button>
     <footer class="confirmation-footer">
