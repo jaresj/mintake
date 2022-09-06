@@ -59,6 +59,7 @@ module.exports = {
         res.render('intake.ejs');
       } else {
         res.render('intake.ejs', {
+          // Could probably write a function to dynamically build the object in refactoring.  I'm sure my code here could be made dry.
           givenName: formEntries[0].givenName,
           familyName: formEntries[0].familyName,
           address: formEntries[0].address,
@@ -70,8 +71,7 @@ module.exports = {
           occupation: formEntries[0].occupation,
           emergencyContact: formEntries[0].emergencyContact,
           emergencyContactPhone: formEntries[0].emergencyContactPhone,
-          emergencyContactRelationship:
-            formEntries[0].emergencyContactRelationship,
+          emergencyContactRelationship: formEntries[0].emergencyContactRelationship,
           physician: formEntries[0].physician,
           physicianPhone: formEntries[0].physicianPhone,
           medicalConditions: formEntries[0].medicalConditions,
