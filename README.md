@@ -21,19 +21,29 @@ EJS, MongoDB, Express, Mongoose, JavaScript, CSS, HTML
 --- Optimizations/Fixes to Current Code ---
 
 -Use/workflow documentation for the site.
+
 -Use ejs to make the state select, including a selected tag for the user's state (currently reloads to default on form edit).
+
 -Customize the postmark confirmation email to users.
+
 -Optimization for tablet/mobile devices (responsive design).
+
 -Add encryption to all medical information (current db information is all fictionalized to avoid HIPAA concerns).
+
 -SEO optimization.
+
 -Accessibility optimization to a11y standards.
+
 -Code refactoring in several functions.
 
 --- Additional Features and Functionality ---
 
 -Differentiate authentication between doctors/patients.
+
 -Allow doctors to send form links to patients/view own patient intake forms.
+
 -Allow for password changes (forgot password link).
+
 -Provide functionality to customize forms for different physician types.
 
 ## Lessons Learned:
