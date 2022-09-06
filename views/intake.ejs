@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header class="header">
+        <nav>
+            <img alt="Mintake Logo" src="../assets/images/fullIcon.png">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="form-header">
     <h1>Medical Questionnaire</h1>
     <p>Please fill out all required questions below.  Form will not submit unless all required questions are answered.</p></div>
-   <a href="/logout" id="logout" class="logout-btn">Sign Out </a>
     <main id="form">
         <form name="intakeForm" action="/intake/submitIntake" method='POST'>
             <label for="givenName" class="basicInfo">Given Name:</label>
