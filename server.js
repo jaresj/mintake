@@ -9,6 +9,7 @@ const logger = require('morgan');
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const intakeRoutes = require('./routes/intake');
+const confirmationRoutes = require('./routes/confirmation')
 const morgan = require('morgan');
 
 require('dotenv').config({ path: './config/.env' });
@@ -49,7 +50,7 @@ app.use(flash());
 app.use('/', mainRoutes);
 app.use('/intake', intakeRoutes);
 app.use('/signup', mainRoutes);
-app.use('/confirmation', mainRoutes);
+app.use('/confirmation', confirmationRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(
