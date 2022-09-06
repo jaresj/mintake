@@ -18,7 +18,7 @@ module.exports = {
                     state: formEntries[0].state,
                     zipCode: formEntries[0].zipCode,
                     phoneNumber: formEntries[0].phoneNumber,
-                    emailAddress: formEntries[0].userEmail,
+                    emailAddress: formEntries[0].emailAddress,
                     occupation: formEntries[0].occupation,
                     emergencyContact: formEntries[0].emergencyContact,
                     emergencyContactPhone: formEntries[0].emergencyContactPhone,
