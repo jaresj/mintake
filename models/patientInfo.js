@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Patient Intake Form Model
 const PatientInfoSchema = new mongoose.Schema(
   {
     userId: {
@@ -170,6 +171,6 @@ const PatientInfoSchema = new mongoose.Schema(
     }
   },
   { timestamps: true }
-);
+); 
 
 module.exports = mongoose.model('PatientInfo', PatientInfoSchema);
