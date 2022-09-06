@@ -12,6 +12,16 @@ exports.getLogin = (req, res) => {
   });
 };
 
+exports.getEmail = (req, res) => {
+  if (req.user) {
+    console.log(`getEmail redirect`);
+    return res.redirect('/confirmation/sendEmail');
+  }
+  res.render('/', {
+    title: 'Email Sent!',
+  });
+};
+
 exports.postLogin = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Only -->
+    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Styling Only -->
+    
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -27,14 +27,21 @@
       </nav>
     </header>
     <div class="confirmation-header">
-      <h1>INTAKE FORM SUCCESSFULLY SUBMITTED</h1>
+      <h1>Thanks for your submission!</h1>
+      <p>Your submission has been recorded in our database and is now available for your physician to review.  Feel free to edit your intake form at any time.</p>
+      <p>If you'd like a submission confirmation email to be delivered to your user email, please click the appropriate button below.</p>
+      <p>Thank you for submitting your information with Mintake!</p>
     </div>
     <img
       class="confirmation-img"
       src="/assets/images/diana-polekhina--z82VezdK2M-unsplash.jpg"
       alt="Thumbs Up"
     />
-    <button class="confirmation-btn" onclick="window.location.href='/'">
+    <form method="post" action="/confirmation/sendEmail" method="POST">
+      <input type="hidden" name="name" value="value" /> 
+      <input id="email" type="submit" value="Send Confirmation Email">
+    </form>
+    <button class="confirmation-btn" id="email" onclick="location.href='/'">
       THANK YOU
     </button>
     <footer class="confirmation-footer">
