@@ -1,6 +1,4 @@
 const postmark = require('postmark');
-const User = require('../models/User');
-const PatientInfo = require('../models/PatientInfo');
 
 module.exports = {
   // getUser: async (req, res) => {
