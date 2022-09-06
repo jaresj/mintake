@@ -8,8 +8,8 @@ const flash = require('express-flash');
 const logger = require('morgan');
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
-const intakeRoutes = require('./routes/intake')
-const morgan = require('morgan')
+const intakeRoutes = require('./routes/intake');
+const morgan = require('morgan');
 
 require('dotenv').config({ path: './config/.env' });
 
@@ -37,7 +37,7 @@ app.use(
 // Use morgan for logging in dev mode
 // 'npm run dev' will begin dev mode (with morgan/nodemon)
 if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'))
+  app.use(morgan('dev'));
 }
 
 // Passport middleware

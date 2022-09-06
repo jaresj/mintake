@@ -1,6 +1,53 @@
 const PatientInfo = require('../models/PatientInfo')
 const Intake = require('../models/PatientInfo')
 
+const requestBodyToDocument = (request) => {
+    // Assigning textarea values to variable, otherwise they don't go to db
+    const userHealthConditions = request.body.userHealthConditions;
+    const userMedications = request.body.userMedications;
+    const conditionDetails = request.body.conditionDetails;
+
+    return {userId: request.user._id,
+        givenName: request.body.givenName,
+        familyName: request.body.familyName,
+        address: request.body.streetAddress,
+        city: request.body.userCity,
+        state: request.body.userState,
+        zipCode: request.body.userZip,
+        phoneNumber: request.body.userPhone,
+        emailAddress: request.body.userEmail,
+        occupation: request.body.userOccupation,
+        emergencyContact: request.body.userContact,
+        emergencyContactPhone: request.body.userContactPhone,
+        emergencyContactRelationship: request.body.userContactPhone,
+        physician: request.body.userPhysician,
+        physicianPhone: request.body.userPhysicianPhone,
+        medicalConditions: userHealthConditions,
+        currentMedications: userMedications,
+        headaches: request.body.headaches,
+        majorAccident: request.body.accident,
+        allergies: request.body.allergies,
+        varicoseVeins: request.body.varicoseVeins,
+        arthritisTendonitis: request.body.arthritis,
+        bloodClots: request.body.bloodClots,
+        cancer: request.body.cancer,
+        neckBackInjuries: request.body.backInjury,
+        tmj: request.body.tmj,
+        diabetes: request.body.diabetes,
+        abnormalSkinConditions: request.body.skinConditions,
+        fibromyalgia: request.body.fibromyalgia,
+        heartCirculationProblems: request.body.heartCondition,
+        numbness: request.body.numbness,
+        jointSurgery: request.body.jointSurgery,
+        sprainsStrains: request.body.sprains,
+        highLowBloodPressure: request.body.bloodPressure,
+        recentInjuries: request.body.recentInjuries,
+        additionalSymptomInfo: conditionDetails,
+        digitalSignature: request.body.userSignature,
+        dateOfSubmission: request.body.currentDate
+    }
+}
+
 module.exports = {
     getSubmission: async (req, res) => {
         try {
@@ -57,46 +104,12 @@ module.exports = {
     },
     submitIntakeForm: async (req, res) => {
         try {
-            await Intake.create({
-                userId: req.user._id,
-                givenName: req.body.givenName,
-                familyName: req.body.familyName,
-                address: req.body.streetAddress,
-                city: req.body.userCity,
-                state: req.body.userState,
-                zipCode: req.body.userZip,
-                phoneNumber: req.body.userPhone,
-                emailAddress: req.body.userEmail,
-                occupation: req.body.userOccupation,
-                emergencyContact: req.body.userContact,
-                emergencyContactPhone: req.body.userContactPhone,
-                emergencyContactRelationship: req.body.userContactPhone,
-                physician: req.body.userPhysician,
-                physicianPhone: req.body.userPhysicianPhone,
-                medicalConditions: req.body.userHealthConditons || null,
-                currentMedications: req.body.userMedications || null,
-                headaches: req.body.headaches,
-                majorAccident: req.body.accident,
-                allergies: req.body.allergies,
-                varicoseVeins: req.body.varicoseVeins,
-                arthritisTendonitis: req.body.arthritis,
-                bloodClots: req.body.bloodClots,
-                cancer: req.body.cancer,
-                neckBackInjuries: req.body.backInjury,
-                tmj: req.body.tmj,
-                diabetes: req.body.diabetes,
-                abnormalSkinConditions: req.body.skinConditions,
-                fibromyalgia: req.body.fibromyalgia,
-                heartCirculationProblems: req.body.heartCondition,
-                numbness: req.body.numbness,
-                jointSurgery: req.body.jointSurgery,
-                sprainsStrains: req.body.sprains,
-                highLowBloodPressure: req.body.bloodPressure,
-                recentInjuries: req.body.recentInjuries,
-                additionalSymptomInfo: req.body.conditionDetails || null,
-                digitalSignature: req.body.userSignature,
-                dateOfSubmission: req.body.currentDate
-            })
+            await Intake.findOneAndUpdate(
+                { emailAddress: req.body.userEmail }, // Search for document with same email
+                requestBodyToDocument(req), // Upsert (update or insert)
+                {upsert: true, new: true},
+
+            );
             console.log('Form has been submitted')
             res.redirect('/confirmation')
         } catch (err) {
