@@ -42,5 +42,8 @@
   "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme",
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": "16.14.0"
   }
 }
