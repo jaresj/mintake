@@ -1,8 +1,10 @@
 const { request } = require('express');
 const express = require('express');
 const router = express.Router();
-const intakeController = require('./controllers/intake');
-const { ensureAuth } = require('./middleware/auth');
+// const intakeController = require('./controllers/intake');
+// const { ensureAuth } = require('./middleware/auth');
+const intakeController = require('/app/controllers/intake');
+const { ensureAuth } = require('/app/middleware/auth');
 
 // @desc    Intake Page
 // @route   GET /intake
