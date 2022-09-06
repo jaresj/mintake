@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header class="header">
+        <nav>
+            <img alt="Mintake Logo" src="../assets/images/fullIcon.png">
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="form-header">
     <h1>Medical Questionnaire</h1>
     <p>Please fill out all required questions below.  Form will not submit unless all required questions are answered.</p></div>
-   <a href="/logout" id="logout" class="logout-btn">Sign Out </a>
     <main id="form">
         <form name="intakeForm" action="/intake/submitIntake" method='POST'>
             <label for="givenName" class="basicInfo">Given Name:</label>
@@ -128,119 +136,113 @@
                 <h3>Medical History</h3>
 
                 <label for="userHealthConditions" class="medicalHistory">Medical Conditions:</label>
-                <textarea name="userHealthConditions" form="intakeForm" placeholder="Describe any medical conditions here" rows="6" cols="100"><%= locals.medicalConditions || "" %></textarea>
+                <textarea name="userHealthConditions" placeholder="Describe any medical conditions here" rows="6" cols="100"><%= locals.medicalConditions || "" %></textarea>
                 <label for="userMedications" class="medicalHistory">Current Medications:</label>
-                <textarea name="userMedications" form="intakeForm" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"><%= locals.currentMedications || "" %></textarea>
+                <textarea name="userMedications" placeholder="Please list any medications (with doses) you are currently taking" rows="6" cols="100"><%= locals.currentMedications || "" %></textarea>
 
                 <p>Please indicate any of the following conditions you currently have:</p>
 
                 <ul id="allConditions">
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="headaches" value="true">
+                        <input type="checkbox" class="conditions" name="headaches" value="true" <%= (locals.headaches == true) ? 'checked':''%> >
                         <label for="headaches">Headaches</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="cancer" value="true">
+                        <input type="checkbox" class="conditions" name="cancer" value="true" <%= ((locals.cancer === true) ? 'checked':'') %> >
                         <label for="cancer">Cancer</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="heartCondition" value="true">
+                        <input type="checkbox" class="conditions" name="heartCondition" value="true" <%= ((locals.heartCirculationProblems === true) ? 'checked':'') %> >
                         <label for="heartCondition">Heart/Circulation Problems</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="accident" value="true">
+                        <input type="checkbox" class="conditions" name="accident" value="true" <%= ((locals.majorAccident === true) ? 'checked':'') %> >
                         <label for="accident">Major Accident</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="backInjury" value="true">
+                        <input type="checkbox" class="conditions" name="backInjury" value="true" <%= ((locals.neckBackInjuries === true) ? 'checked':'') %> >
                         <label for="backInjury">Neck/Back Injuries</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="numbness" value="true">
+                        <input type="checkbox" class="conditions" name="numbness" value="true" <%= ((locals.numbness === true) ? 'checked':'') %> >
                         <label for="numbness">Numbness</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="allergies" value="true">
+                        <input type="checkbox" class="conditions" name="allergies" value="true" <%= ((locals.allergies === true) ? 'checked':'') %> >
                         <label for="allergies">Allergies</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="tmj" value="true">
+                        <input type="checkbox" class="conditions" name="tmj" value="true" <%= ((locals.tmj === true) ? 'checked':'') %> >
                         <label for="tmj">TMJ</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="jointSurgery" value="true">
+                        <input type="checkbox" class="conditions" name="jointSurgery" value="true" <%= ((locals.jointSurgery === true) ? 'checked':'') %> >
                         <label for="jointSurgery">Joint Surgery</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="varicoseVeins" value="true">
+                        <input type="checkbox" class="conditions" name="varicoseVeins" value="true" <%= ((locals.varicoseVeins === true) ? 'checked':'') %> >
                         <label for="varicoseVeins">Varicose Veins</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="diabetes" value="true">
+                        <input type="checkbox" class="conditions" name="diabetes" value="true" <%= ((locals.diabetes === true) ? 'checked':'') %> >
                         <label for="diabetes">Diabetes</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="sprains" value="true">
+                        <input type="checkbox" class="conditions" name="sprains" value="true" <%= ((locals.sprainsStrains === true) ? 'checked':'') %> >
                         <label for="sprains">Sprains / Strains</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="arthritis" value="true">
+                        <input type="checkbox" class="conditions" name="arthritis" value="true" <%= ((locals.arthritis === true) ? 'checked':'') %> >
                         <label for="arthritis">Arthritis/Tendonitis</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="skinConditions" value="true">
+                        <input type="checkbox" class="conditions" name="skinConditions" value="true" <%= ((locals.abnormalSkinConditions === true) ? 'checked':'') %> >
                         <label for="skinConditions">Abnormal Skin Conditions</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="bloodPressure" value="true">
+                        <input type="checkbox" class="conditions" name="bloodPressure" value="true" <%= ((locals.highLowBloodPressure === true) ? 'checked':'') %> >
                         <label for="bloodPressure">High/Low Blood Pressure</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="bloodClots" value="true">
+                        <input type="checkbox" class="conditions" name="bloodClots" value="true" <%= ((locals.bloodClots === true) ? 'checked':'') %> >
                         <label for="bloodClots">Blood Clots</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="fibromyalgia" value="true">
+                        <input type="checkbox" class="conditions" name="fibromyalgia" value="true" <%= ((locals.fibromyalgia === true) ? 'checked':'') %> >
                         <label for="fibromyalgia">Fibromyalgia</label>
                     </li>
 
                     <li class="conditions">
-                        <input type="checkbox" class="conditions" name="recentInjuries" value="true">
+                        <input type="checkbox" class="conditions" name="recentInjuries" value="true" <%= ((locals.recentInjuries === true) ? 'checked':'') %> >
                         <label for="recentInjuries">Recent Injuries</label>
                     </li>
-
-                </section>
+                </ul>
             </section>
 
             <p>Please add any necessary information regarding any of the conditions marked above that we should be aware of:</p>
-            <textarea id="conditionDetails" name="conditionDetails" form="intakeForm" placeholder="Additional information here" rows="6" cols="100"><%= locals.additionalSymptomInfo || "" %></textarea>
+            <textarea name="conditionDetails" placeholder="Additional information here" rows="6" cols="100"><%= locals.additionalSymptomInfo || "" %></textarea>
     
             <label for="userSignature" class="signatureBlock">Digital Signature:</label>
-            <input type="text" placeholder="Patient Name/Signature" name="userSignature" required>
-            <label for="currentDate" class="signatureBlock">Date:</label>
-            <input type="date" placeholder="MM/DD/YYYY" name="currentDate" required>
-            <input type="submit" id="submit" value="Submit">
+            <input type="text" placeholder="Patient Name/Signature" name="userSignature" value="<%= locals.digitalSignature || "" %>" required>
+            <input type="submit" id="submit" value="Submit" onsubmit="submitForm()">
         </form>
     </main>
-    
-
-    
 
     <script src="js/main.js"></script>
 </body>

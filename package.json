@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "set \"NODE_ENV=development\" && nodemon server.js",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Justice Jares",
   "license": "MIT",
@@ -21,7 +21,6 @@
     "mongodb": "^3.6.5",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.7",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "postmark": "^3.0.14",
@@ -34,5 +33,14 @@
   "bugs": {
     "url": "https://github.com/jaresj/todo-mvc-auth-local/issues"
   },
-  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme"
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
+  "homepage": "https://github.com/jaresj/todo-mvc-auth-local#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }

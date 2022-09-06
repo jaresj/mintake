@@ -179,3 +179,75 @@ input[type='text'] {
   cursor: pointer;
   width: 100%;
 }
+
+/* CONFIRMATION */
+.confirmation-btn {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 165, 245);
+  color: white;
+  margin: 15px auto;
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-header {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-footer {
+  font-size: 10px;
+  float: left;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+/* Images */
+
+.index-img,
+.confirmation-img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+/* Header */
+body {
+  margin: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #ccc;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header nav ul {
+  padding: 0;
+  margin: auto 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header nav li {
+  padding: 0 1rem;
+}
+
+.header nav img {
+  height: 3rem;
+  padding: 0.5rem 1rem;
+}
+
+.header a {
+  text-decoration: none;
+  color: rgb(0, 165, 245);
+  cursor: pointer;
+}
