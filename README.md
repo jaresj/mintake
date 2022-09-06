@@ -5,6 +5,7 @@ This full stack application for allowing clients and patients to connect via an 
 ## Creators:
 
 [Justice](https://github.com/jaresj)
+
 [Jeff](https://github.com/NothingRemains)
 
 **Link to project:** Work in progress (finding new hosting site after heroku took away free tier)
@@ -35,6 +36,8 @@ EJS, MongoDB, Express, Mongoose, JavaScript, CSS, HTML
 -Accessibility optimization to a11y standards.
 
 -Code refactoring in several functions.
+
+
 
 --- Additional Features and Functionality ---
 
