@@ -1,8 +1,6 @@
 const submitButton = document.querySelector('#submit');
 const emailButton = document.querySelector('#email');
 
-
-submitButton.addEventListener('click', submitForm);
 submitButton.addEventListener('click', submitUserForm);
 emailButton.addEventListener('click', sendEmail);
 
