@@ -10,6 +10,8 @@ This full stack application for allowing clients and patients to connect via an 
 
 [Amethyst](https://github.com/amethystbibby)
 
+[Michael-Futral](https://github.com/Michael-Futral)
+
 **Link to project:** Work in progress (finding new hosting site after heroku took away free tier)
 
 ![alt tag](http://placecorgi.com/1200/650)
@@ -39,8 +41,6 @@ EJS, MongoDB, Express, Mongoose, JavaScript, CSS, HTML
 
 - [ ] Code refactoring in several functions.
 
-
-
 ###### --- Additional Features and Functionality ---
 
 - [ ] Differentiate authentication between doctors/patients.
@@ -53,6 +53,6 @@ EJS, MongoDB, Express, Mongoose, JavaScript, CSS, HTML
 
 ## Lessons Learned:
 
--We struggled with submitting emails, not knowing GET and POST routes can't be interchanged.  In the end, we had to add a hidden form with a POST method just to call postmark to send users an email.  There may be a better way to do this, and the code could use refactoring.
+-We struggled with submitting emails, not knowing GET and POST routes can't be interchanged. In the end, we had to add a hidden form with a POST method just to call postmark to send users an email. There may be a better way to do this, and the code could use refactoring.
 
--The strength of .ejs for customization of pages really came to the forefront with returning intake forms with pre-filled values.  Passing in variables to allow the templating engine to access them and fill out defaults requires only some simple logic within the template and passing the variables from the back end to to the template!
+-The strength of .ejs for customization of pages really came to the forefront with returning intake forms with pre-filled values. Passing in variables to allow the templating engine to access them and fill out defaults requires only some simple logic within the template and passing the variables from the back end to to the template!
