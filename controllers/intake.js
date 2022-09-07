@@ -1,5 +1,7 @@
-const PatientInfo = require('../models/PatientInfo');
-const Intake = require('../models/PatientInfo');
+// const PatientInfo = require('../models/PatientInfo');
+// const Intake = require('../models/PatientInfo');
+const PatientInfo = require('/app/models/PatientInfo');
+const Intake = require('/app/models/PatientInfo');
 
 const requestBodyToDocument = (request) => {
   // Assigning textarea values to variable, otherwise they don't go to db

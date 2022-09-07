@@ -6,16 +6,23 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
 const logger = require('morgan');
-const connectDB = require('./config/database');
-const mainRoutes = require('./routes/main');
-const intakeRoutes = require('./routes/intake');
-const confirmationRoutes = require('./routes/confirmation')
+// const connectDB = require('./config/database');
+// const mainRoutes = require('./routes/main');
+// const intakeRoutes = require('./routes/intake');
+// const confirmationRoutes = require('./routes/confirmation')
+const connectDB = require('/app/config/database');
+const mainRoutes = require('/app/routes/main');
+const intakeRoutes = require('/app/routes/intake');
+const confirmationRoutes = require('/app/routes/confirmation')
 const morgan = require('morgan');
 
-require('dotenv').config({ path: './config/.env' });
+// Changed path from ./ {...} to /app for both dotenv and passport
+
+// require('dotenv').config({ path: './config/.env' });
+require('dotenv').config({ path: '/app/config/.env' });
 
 // Passport config
-require('./config/passport')(passport);
+require('/app/config/passport')(passport);
 
 connectDB();
 
